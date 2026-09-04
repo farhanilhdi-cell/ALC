@@ -35,7 +35,7 @@
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: var(--bg-main);
-  color: var(#000);
+  color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -47,7 +47,7 @@ body {
 }
 
 /* ==========================================
-   NAVBAR GLASSMORPHISM & INTERAKTIF ALC
+   3. NAVBAR GLASSMORPHISM & INTERAKTIF ALC
    ========================================== */
 .navbar {
   position: fixed;
@@ -62,7 +62,6 @@ body {
   transition: var(--transition);
 }
 
-/* Efek Bayangan / Shrink Saat Navbar Di-scroll */
 .navbar.scrolled {
   box-shadow: 0 10px 25px rgba(27, 42, 74, 0.1);
   padding: 4px 0;
@@ -117,7 +116,6 @@ body {
   transition: var(--transition);
 }
 
-/* Indikator Garis Bawah (Hover & Active Indicator) */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -144,20 +142,9 @@ body {
   font-weight: 700;
 }
 
-/* Tombol Hamburger (Mobile) */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: var(--primary);
-  font-size: 1.5rem;
-  transition: var(--transition);
-}
-/* Sembunyikan tombol hamburger di mode laptop / desktop */
 .hamburger-btn, 
 .hamburger {
-  display: none !important;
+  display: none;
   background: transparent;
   border: none;
   font-size: 1.5rem;
@@ -166,80 +153,27 @@ body {
   padding: 5px;
 }
 
-/* Tampilan hanya untuk layar HP (Maksimal 768px) */
-@media screen and (max-width: 768px) {
-  .hamburger-btn,
-  .hamburger {
-    display: block !important;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    flex-direction: column;
-    padding: 20px;
-    gap: 15px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    display: none;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-}
 /* ==========================================
-   NAVBAR RESPONSIF (RESPONSIVE MOBILE MENU)
+   4. SECTION BACKGROUND & HERO
    ========================================== */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: var(--bg-card);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    flex-direction: column;
-    padding: 24px;
-    gap: 20px;
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-    
-    /* Animasi Menu Slide Down saat Aktif */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: var(--transition);
-  }
-
-  .nav-links.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  .nav-btn-admin {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
+section {
+  padding: 90px 24px;
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* ==========================================
-   4. HERO SECTION
-   ========================================== */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('beranda.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 80px 0;
 }
 
@@ -273,7 +207,7 @@ body {
 }
 
 .hero-card p {
-  color: var(#000);
+  color: var(--text-primary);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -287,102 +221,29 @@ body {
   margin-bottom: 20px;
   border: 1px solid var(--border-color);
 }
-/* ==========================================
-   PROPERTI DASAR UNTUK SECTION BER-BACKGROUND GAMBAR
-   ========================================== */
-section {
-  padding: 90px 24px;
-  width: 100%;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
-/* 1. BACKGROUND SECTION BERANDA (HERO) */
-.hero{
-  /* Ganti 'bg-beranda.jpg' dengan nama file gambar beranda kamu */
-  background-image:  url('beranda.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  padding: 80px 0;
-}
-
-/* 2. BACKGROUND SECTION PROGRAM */
 #program {
-  /* Ganti 'bg-program.jpg' atau 'bg-program.png' dengan nama file gambar program kamu */
-  background-image:  url('program.jpg');  
+  background-image: url('program.jpg');  
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding: 80px 0;
 }
+
 #kegiatan {
-  /* Ganti 'bg-program.jpg' atau 'bg-program.png' dengan nama file gambar program kamu */
-  background-image: linear-gradient(rgba(249, 246, 240, 0.50), rgba(249, 246, 240, 0.50)),  url('kegiatan.jpg');
+  background-image: linear-gradient(rgba(249, 246, 240, 0.50), rgba(249, 246, 240, 0.50)), url('kegiatan.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding: 80px 0;
 }
 
-/* 3. BACKGROUND SECTION BIAYA PAKET */
 #biaya {
-  /* Ganti 'bg-biaya.png' atau 'bg-biaya.jpg' dengan nama file gambar biaya kamu */
-  background-image:  url('biaya.jpg');
+  background-image: url('biaya.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding: 80px 0;
-}
-
-/* ==========================================
-   STYLING HALAMAN LOGIN DENGAN BACKGROUND GAMBAR
-   ========================================== */
-.login-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-  margin: 0;
-
-  /* Gambar Latar Belakang Login dengan Efek Transparansi Tint */
-  background-image: url('login.jpg'); /* Ganti dengan nama file gambar kamu */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Container Particles.js */
-.login-body #particles-js {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Kartu Login Glassmorphism */
-.login-card {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.85); /* Transparan Halus */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 16px;
-  padding: 32px 24px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* ==========================================
@@ -397,7 +258,7 @@ section {
 }
 
 .btn {
-  padding: 10px 5px;
+  padding: 10px 16px;
   border-radius: 10px;
   font-weight: 700;
   text-decoration: none;
@@ -493,7 +354,7 @@ section {
 }
 
 .card p {
-  color: var(#000);
+  color: var(--text-primary);
   font-size: 0.95rem;
 }
 
@@ -582,8 +443,57 @@ section {
 }
 
 /* ==========================================
-   8. DASHBOARD OWNER & FORM STYLES
+   8. HALAMAN LOGIN & DASHBOARD OWNER
    ========================================== */
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  margin: 0;
+  background-image: url('login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-body #particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+body.dashboard-body {
+  background-image: url('lilly dashboard.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -614,17 +524,26 @@ section {
 .text-profit { color: var(--primary); }
 
 .admin-flex {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
   gap: 24px;
+  align-items: flex-start;
+  width: 100%;
 }
 
-.form-container, .table-container {
-  background: var(--bg-card);
-  padding: 24px;
+.form-container, 
+.table-container {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('lilly dashboard.jpg');
+  background-size: cover;
+  background-position: center;
   border-radius: 16px;
+  padding: 24px;
   border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
+
+.form-container { flex: 1; width: 100%; }
+.table-container { flex: 2; width: 100%; }
 
 .form-group {
   margin-bottom: 16px;
@@ -638,7 +557,8 @@ section {
   color: var(--primary);
 }
 
-.form-group input, .form-group select {
+.form-group input, 
+.form-group select {
   width: 100%;
   padding: 10px 14px;
   border-radius: 8px;
@@ -658,6 +578,7 @@ table {
   border-collapse: collapse;
   text-align: left;
   font-size: 0.9rem;
+  background-color: transparent;
 }
 
 th, td {
@@ -666,7 +587,7 @@ th, td {
 }
 
 th {
-  background: var(--bg-main);
+  background-color: rgba(243, 244, 246, 0.85);
   color: var(--primary);
   font-weight: 700;
 }
@@ -698,7 +619,7 @@ th {
 }
 
 /* ==========================================
-   9. SCROLL ANIMATIONS
+   9. SCROLL ANIMATIONS & FOOTER
    ========================================== */
 .fade-in-element {
   opacity: 0;
@@ -711,9 +632,6 @@ th {
   transform: translateY(0);
 }
 
-/* ==========================================
-   10. FOOTER & MEDIA QUERIES
-   ========================================== */
 footer {
   text-align: center;
   padding: 32px 24px;
@@ -724,50 +642,24 @@ footer {
   margin-top: 40px;
 }
 
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: var(--bg-card);
-    flex-direction: column;
-    padding: 20px;
-    gap: 16px;
-    border-bottom: 1px solid var(--border-color);
-    display: none;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .admin-flex {
-    grid-template-columns: 1fr;
-  }
-}
 /* ==========================================
-   NAVBAR RESPONSIF UNTUK MODE HP
+   10. MEDIA QUERIES (KHUSUS TAMPILAN HP)
    ========================================== */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .hamburger-btn,
   .hamburger {
-    display: block; /* Menampilkan tombol ikon hamburger di HP */
+    display: block !important;
     z-index: 1001;
-    cursor: pointer;
   }
 
   .nav-links {
     position: fixed;
-    top: 70px; /* Posisi di bawah bar utama */
+    top: 70px;
     right: 16px;
     left: 16px;
     width: calc(100% - 32px);
     height: auto;
-    background: rgba(249, 246, 240, 0.95); /* Menggunakan tema Warm Sand ALC[cite: 1] */
+    background: rgba(249, 246, 240, 0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     flex-direction: column;
@@ -777,8 +669,6 @@ footer {
     border-radius: 16px;
     border: 1px solid var(--border-color);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    
-    /* Keadaan Sembunyi Secara Default */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -786,7 +676,6 @@ footer {
     transition: all 0.3s ease-in-out;
   }
 
-  /* Keadaan AKTIF saat Hamburger diklik */
   .nav-links.show {
     opacity: 1;
     visibility: visible;
@@ -800,94 +689,19 @@ footer {
   }
 
   .nav-btn-admin {
-    width: 125%;
+    width: 90%;
     text-align: center;
     justify-content: center;
   }
-}
 
-/* ==========================================
-   BACKGROUND GAMBAR DASHBOARD LAPORAN KEUANGAN
-   ========================================== */
-
-/* Background untuk Kotak Input (Catat Pembayaran SPP) */
-.form-container {
-  background-image:  url('lilly dashboard.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-/* Background untuk Tabel (Riwayat Keuangan) */
-.table-container {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('lilly dashboard.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-/* Penyesuaian latar belakang tabel agar transparan menyatu dengan background */
-.table-wrapper table {
-  background-color: transparent;
-}
-
-.table-wrapper th {
-  background-color: rgba(243, 244, 246, 0.85); /* Efek agak transparan di header tabel */
-}
-/* ==========================================
-   BACKGROUND KELAS KHUSUS DASHBOARD OWNER
-   ========================================== */
-body.dashboard-body {
-  /* Ganti 'bg-kegiatan.jpg' dengan nama file gambar background kamu */
-  background-image:  url('lilly dashboard.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Latar belakang tetap saat di-scroll */
-  min-height: 100vh;
-}
-/* ==========================================
-   PENYESUAIAN FLEX & RESPONESIF KEDUA FORM
-   ========================================== */
-.admin-flex {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.form-container,
-.table-container {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  box-sizing: border-box;
-}
-
-.form-container {
-  flex: 1; /* Porsi form lebih kecil */
-  width: 100%;
-}
-
-.table-container {
-  flex: 2; /* Porsi tabel lebih lebar di laptop */
-  width: 100%;
-}
-
-/* KHUSUS KETIKA DIBUKA DI MODE HP (LEBAR <= 768px) */
-@media screen and (max-width: 768px) {
   .admin-flex {
-    flex-direction: column; /* Ubah tampilan ke bawah (1 kolom) */
+    flex-direction: column;
     gap: 20px;
   }
 
   .form-container,
   .table-container {
-    width: 100% !important; /* Paksa lebar 100% penuh */
+    width: 100% !important;
     padding: 18px;
   }
 }
