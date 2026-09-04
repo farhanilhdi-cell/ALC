@@ -1,4 +1,4 @@
-p<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -11,40 +11,39 @@ p<!DOCTYPE html>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- External Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
- <!-- NAVBAR GLASSMORPHISM ALC -->
- <header>
-  <nav class="navbar">
-    <div class="nav-container">
-      <!-- Tag logo ditutup dengan benar -->
-      <a href="index.html" class="logo">
-        <img src="Logo.jpg" alt="Logo ALC" class="logo-img">
-      </a>
-    
-      <!-- Class disamakan menjadi hamburger-btn -->
-      <button class="hamburger-btn" id="hamburger" aria-label="Toggle Navigation">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+  <!-- NAVBAR GLASSMORPHISM ALC -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="Logo.jpg" alt="Logo ALC" class="logo-img">
+        </a>
+      
+        <!-- Tombol Hamburger Mobile -->
+        <button class="hamburger-btn" id="hamburger" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="nav-link active">Beranda</a></li>
-        <li><a href="#program" class="nav-link">Program</a></li>
-        <li><a href="#kegiatan" class="nav-link">Kegiatan</a></li> 
-        <li><a href="#biaya" class="nav-link">Biaya Paket</a></li>
-        <li><a href="login.html" class="btn btn-primary nav-btn-admin"><i class="fa-solid fa-user-lock"></i> Area Owner</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="nav-link active">Beranda</a></li>
+          <li><a href="#program" class="nav-link">Program</a></li>
+          <li><a href="#kegiatan" class="nav-link">Kegiatan</a></li> 
+          <li><a href="#biaya" class="nav-link">Biaya Paket</a></li>
+          <li><a href="login.html" class="btn btn-primary nav-btn-admin"><i class="fa-solid fa-user-lock"></i> Area Owner</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
-  <!-- HERO SECTION -->
+
+  <!-- 1. HERO SECTION -->
   <section id="home" class="hero">
-    <div class="hero-container-center">
-      <div class="hero-card fade-in-element">
+    <div class="hero-container-center fade-in-element">
+      <div class="hero-card">
         <img src="banner ALC.png" alt="Banner Bimbel ALC" class="profile-card-img">
         <h3>AMELIA LEARNING CENTER</h3>
         <p>
@@ -53,8 +52,8 @@ p<!DOCTYPE html>
         </p>
       </div>
 
-      <!-- TOMBOL INTERAKTIF TRANSPARAN -->
-      <div class="btn-group fade-in-element">
+      <!-- Tombol Interaktif -->
+      <div class="btn-group">
         <button class="btn btn-primary" id="btn-profil">
           <i class="fa-solid fa-circle-info"></i> Profil Bimbel
         </button>
@@ -65,9 +64,9 @@ p<!DOCTYPE html>
     </div>
   </section>
 
- <!-- 3. PROGRAM BELAJAR SECTION (BACKGROUND: bg-program.jpg) -->
+  <!-- 2. PROGRAM BELAJAR SECTION -->
   <section id="program">
-    <div class="container" style="padding: 150;">
+    <div class="container">
       <div class="section-header fade-in-element">
         <p class="section-subtitle">Program Unggulan</p>
         <h2 class="section-title">Pilihan Program Belajar Utama</h2>
@@ -80,7 +79,7 @@ p<!DOCTYPE html>
         </div>
         <div class="card fade-in-element">
           <div class="card-icon"><i class="fa-solid fa-quran"></i></div>
-          <h3>TPQ ANAK </h3>
+          <h3>TPQ ANAK</h3>
           <p>Makhorijul Huruf, Hafalan Surah & Doa Pendek, Praktek Sholat, Sirah Nabawiyah, dan Tajwid dasar.</p>
         </div>
         <div class="card fade-in-element">
@@ -92,9 +91,9 @@ p<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- 4. KEGIATAN SECTION (BARU: BACKGROUND: bg-kegiatan.jpg) -->
+  <!-- 3. KEGIATAN SECTION -->
   <section id="kegiatan">
-    <div class="container" style="padding: 150;">
+    <div class="container">
       <div class="section-header fade-in-element">
         <p class="section-subtitle">Aktivitas</p>
         <h2 class="section-title">Kegiatan Belajar Para Siswa</h2>
@@ -117,7 +116,7 @@ p<!DOCTYPE html>
 
         <!-- Kegiatan 3 -->
         <div class="card fade-in-element">
-          <img src="kreatif anak.jpg" alt="Ujian dan Evaluasi" class="profile-card-img" style="max-height: 180px;">
+          <img src="kreatif anak.jpg" alt="Kreativitas Anak" class="profile-card-img" style="max-height: 180px;">
           <h3><i class="fa-solid fa-palette" style="color: var(--primary);"></i> Event & Kreativitas Anak</h3>
           <p>Sesi mewarnai dan kreasi seni melatih motorik halus siswa serta mempererat kekompakan antarteman.</p>
         </div>
@@ -125,9 +124,9 @@ p<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- 4. BIAYA PAKET SECTION (BACKGROUND: bg-biaya.png) -->
+  <!-- 4. BIAYA PAKET SECTION -->
   <section id="biaya">
-    <div class="container" style="padding: 150;">
+    <div class="container">
       <div class="section-header fade-in-element">
         <p class="section-subtitle">Investasi Pendidikan</p>
         <h2 class="section-title">Informasi Biaya Paket</h2>
