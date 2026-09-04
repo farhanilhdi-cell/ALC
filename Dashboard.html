@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Owner - Bimbel ALC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    if (sessionStorage.getItem("isOwnerLoggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+<body style="padding-top: 90px;">
+
+  <!-- NAVBAR OWNER -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          Bimbel <span>ALC</span>
+        </a>
+        <!-- TAMBAHKAN CLASS 'dashboard-body' DI SINI -->
+<body class="dashboard-body">
+
+  <header>
+        <div style="display: flex; gap: 10px;">
+          <a href="index.html" class="btn btn-secondary" style="padding: 6px 16px; font-size:0.85rem;">
+            <i class="fa-solid fa-house"></i> Landing Page
+          </a>
+          <button id="btn-logout" class="btn btn-primary" style="background-color: var(--danger); border-color: var(--danger); padding: 6px 16px; font-size:0.85rem;">
+            <i class="fa-solid fa-right-from-bracket"></i> Keluar
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- DASHBOARD SYSTEM -->
+  <section class="container" style="padding-top: 20px;">
+    <div class="admin-section fade-in-element">
+      <div class="section-header text-left">
+        <p class="section-subtitle">Internal System</p>
+        <h2 class="section-title">Laporan Keuangan & Manajemen Murid</h2>
+       
+      </div>
+
+     <!-- Ringkasan Statistik (5 Kartu) -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px;">
+        <div class="stat-card">
+          <h4>Pemasukan Total</h4>
+          <div class="value text-income" id="total-income">Rp 0</div>
+        </div>
+        <div class="stat-card">
+          <h4>Pengeluaran Total</h4>
+          <div class="value text-expense" id="total-expense">Rp 0</div>
+        </div>
+        <div class="stat-card">
+          <h4>Keuntungan Netto</h4>
+          <div class="value text-profit" id="total-profit">Rp 0</div>
+        </div>
+        <div class="stat-card">
+          <h4>Total Murid Aktif</h4>
+          <div class="value" id="total-murid" style="color: var(--primary, #2563eb); font-weight: 800;">0 Orang</div>
+        </div>
+        <!-- KARTU EKSKLUSIF: TOTAL POTENSI SPP MURID -->
+        <div class="stat-card">
+          <h4>Total Pendapatan Bersih</h4>
+          <div class="value" id="total-spp-masuk" style="color: #10b981; font-weight: 800;">Rp 0</div>
+        </div>
+      </div>
+
+      <!-- SECTION 1: MANAJEMEN MURID AKTIF -->
+      <div class="admin-flex" style="margin-bottom: 40px;">
+        <!-- Input Form Tambah Murid -->
+        <div class="form-container">
+          <h3><i class="fa-solid fa-user-plus"></i> Tambah Murid Aktif</h3>
+          <form id="form-tambah-murid">
+            <div class="form-group">
+              <label for="nama-murid">Nama Murid</label>
+              <input type="text" id="nama-murid" placeholder="Contoh: Anisa Putri" required>
+            </div>
+            <div class="form-group">
+              <label for="program-bimbel">Program Bimbel</label>
+              <select id="program-bimbel" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                <option value="">-- Pilih Program --</option>
+                <option value="Calistung">Calistung</option>
+                <option value="Privat">Privat</option>
+                <option value="Ngaji">Ngaji</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="biaya-spp">Biaya SPP (Rp)</label>
+              <input type="text" id="biaya-spp" placeholder="Contoh: 150.000" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">Simpan Murid</button>
+          </form>
+        </div>
+
+        <!-- Tabel Daftar Murid Aktif -->
+        <div class="table-container">
+          <h3><i class="fa-solid fa-users"></i> Daftar Murid Aktif</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Program</th>
+                  <th>Biaya SPP</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="murid-list">
+                <!-- Diisi via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: TRANSAKSI KEUANGAN (STRUKTUR SAMA DENGAN SECTION 1) -->
+      <div class="admin-flex fade-in-element">
+        <!-- Input Form Catat Pembayaran SPP -->
+        <div class="form-container">
+          <h3><i class="fa-solid fa-pen-to-square"></i> Catat Pembayaran SPP</h3>
+          <form id="transaction-form">
+            <!-- INPUT TANGGAL TRANSAKSI -->
+            <div class="form-group">
+              <label for="transaction-date">Tanggal Transaksi</label>
+              <input type="date" id="transaction-date" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: inherit;">
+            </div>
+
+            <div class="form-group">
+              <label for="desc">Keterangan / Nama Murid</label>
+              <input type="text" id="desc" placeholder="Contoh: SPP Anisa (Calistung)" required>
+            </div>
+            <div class="form-group">
+              <label for="type">Jenis Transaksi</label>
+              <select id="type" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: inherit;">
+                <option value="income">Pemasukan (SPP / Pendaftaran)</option>
+                <option value="expense">Pengeluaran (Modul / Operasional)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="amount">Jumlah (Rp)</label>
+              <input type="text" id="amount" placeholder="Contoh: 150.000" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Simpan Transaksi</button>
+          </form>
+        </div>
+
+        <!-- Tabel Riwayat Keuangan -->
+        <div class="table-container">
+          <h3><i class="fa-solid fa-list-check"></i> Riwayat Keuangan</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tanggal</th> 
+                  <th>Keterangan</th>
+                  <th>Jenis</th>
+                  <th>Jumlah</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="transaction-list">
+                <!-- Diisi via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Bimbel ALC (Amelia Learning Center). Internal Management System.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // 1. Tampilkan Tanggal, Hari, Bulan & Tahun Otomatis
+    function renderCurrentDate() {
+      const dateEl = document.getElementById('date-text');
+      if (!dateEl) return;
+
+      const now = new Date();
+      const options = { 
+        weekday: 'long', 
+        day: 'numeric', 
+        month: 'long', 
+        year: 'numeric' 
+      };
+      dateEl.textContent = now.toLocaleDateString('id-ID', options);
+    }
+
+    // Auto Set Input Tanggal Hari Ini
+    function setTodayDate() {
+      const dateInput = document.getElementById('transaction-date');
+      if (dateInput && !dateInput.value) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+      }
+    }
+
+    // 2. Format Otomatis Titik Ribuan
+    function formatRupiahInput(e) {
+      let value = e.target.value.replace(/[^,\d]/g, '').toString();
+      let split = value.split(',');
+      let sisa = split[0].length % 3;
+      let rupiah = split[0].substr(0, sisa);
+      let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+      if (ribuan) {
+        let separator = sisa ? '.' : '';
+        rupiah += separator + ribuan.join('.');
+      }
+
+      e.target.value = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+    }
+
+    document.getElementById('biaya-spp')?.addEventListener('keyup', formatRupiahInput);
+    document.getElementById('amount')?.addEventListener('keyup', formatRupiahInput);
+
+    // 3. Pengelolaan Data & Perhitungan SPP Masuk
+    let daftarMurid = JSON.parse(localStorage.getItem('muridAktif')) || [];
+
+    function updateDashboardMurid() {
+      const tbody = document.getElementById('murid-list');
+      const totalMuridEl = document.getElementById('total-murid');
+      const totalSppEl = document.getElementById('total-spp-masuk');
+      
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      let totalAkumulasiSPP = 0;
+
+      daftarMurid.forEach((murid, index) => {
+        const nominalNumeric = parseInt(murid.spp.replace(/\./g, ''), 10) || 0;
+        totalAkumulasiSPP += nominalNumeric;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${murid.nama}</strong></td>
+          <td>${murid.program}</td>
+          <td>Rp ${murid.spp}</td>
+          <td>
+            <button onclick="hapusMurid(${index})" style="background: none; border: none; color: var(--danger, #ef4444); cursor: pointer;">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      if (totalMuridEl) {
+        totalMuridEl.textContent = `${daftarMurid.length} Orang`;
+      }
+
+      if (totalSppEl) {
+        totalSppEl.textContent = `Rp ${totalAkumulasiSPP.toLocaleString('id-ID')}`;
+      }
+    }
+
+    // Tambah Murid Baru
+    document.getElementById('form-tambah-murid')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nama = document.getElementById('nama-murid').value.trim();
+      const program = document.getElementById('program-bimbel').value;
+      const spp = document.getElementById('biaya-spp').value;
+
+      if (!nama || !program || !spp) return;
+
+      daftarMurid.push({ nama, program, spp });
+      localStorage.setItem('muridAktif', JSON.stringify(daftarMurid));
+      
+      this.reset();
+      updateDashboardMurid();
+    });
+
+    // Hapus Murid
+    window.hapusMurid = function(index) {
+      daftarMurid.splice(index, 1);
+      localStorage.setItem('muridAktif', JSON.stringify(daftarMurid));
+      updateDashboardMurid();
+    };
+
+    // Logout
+    document.getElementById('btn-logout')?.addEventListener('click', function() {
+      sessionStorage.removeItem("isOwnerLoggedIn");
+      window.location.href = "login.html";
+    });
+
+    // Inisialisasi awal saat dokumen siap
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCurrentDate();
+      setTodayDate();
+      updateDashboardMurid();
+    });
+  </script>

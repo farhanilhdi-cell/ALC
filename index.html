@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bimbel ALC - Amelia Learning Center</title>
+
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <!-- NAVBAR GLASSMORPHISM ALC -->
+ <header>
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Tag logo ditutup dengan benar -->
+      <a href="index.html" class="logo">
+        <img src="Logo.jpg" alt="Logo ALC" class="logo-img">
+      </a>
+    
+      <!-- Class disamakan menjadi hamburger-btn -->
+      <button class="hamburger-btn" id="hamburger" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Beranda</a></li>
+        <li><a href="#program" class="nav-link">Program</a></li>
+        <li><a href="#kegiatan" class="nav-link">Kegiatan</a></li> 
+        <li><a href="#biaya" class="nav-link">Biaya Paket</a></li>
+        <li><a href="login.html" class="btn btn-primary nav-btn-admin"><i class="fa-solid fa-user-lock"></i> Area Owner</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  </header>
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-container-center">
+      <div class="hero-card fade-in-element">
+        <img src="banner ALC.png" alt="Banner Bimbel ALC" class="profile-card-img">
+        <h3>AMELIA LEARNING CENTER</h3>
+        <p>
+          Bimbingan Belajar Calistung (Baca, Tulis, Hitung) & TPQ. Membentuk fondasi karakter, kecerdasan, 
+          dan keahlian belajar anak sejak dini secara interaktif, efektif, dan menyenangkan.
+        </p>
+      </div>
+
+      <!-- TOMBOL INTERAKTIF TRANSPARAN -->
+      <div class="btn-group fade-in-element">
+        <button class="btn btn-primary" id="btn-profil">
+          <i class="fa-solid fa-circle-info"></i> Profil Bimbel
+        </button>
+        <a href="https://wa.me/6281234567890?text=Halo%20Bimbel%20ALC,%20saya%20ingin%20bertanya%20informasi%20pendaftaran" class="btn btn-secondary" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Daftar via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+ <!-- 3. PROGRAM BELAJAR SECTION (BACKGROUND: bg-program.jpg) -->
+  <section id="program">
+    <div class="container" style="padding: 150;">
+      <div class="section-header fade-in-element">
+        <p class="section-subtitle">Program Unggulan</p>
+        <h2 class="section-title">Pilihan Program Belajar Utama</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card fade-in-element">
+          <div class="card-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+          <h3>CALISTUNG (Umur 4 Th+)</h3>
+          <p>Pendampingan belajar membaca, menulis, dan berhitung dengan metode interaktif sesuai perkembangan anak.</p>
+        </div>
+        <div class="card fade-in-element">
+          <div class="card-icon"><i class="fa-solid fa-quran"></i></div>
+          <h3>TPQ ANAK </h3>
+          <p>Makhorijul Huruf, Hafalan Surah & Doa Pendek, Praktek Sholat, Sirah Nabawiyah, dan Tajwid dasar.</p>
+        </div>
+        <div class="card fade-in-element">
+          <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>SD KELAS I - VI</h3>
+          <p>Pendampingan pelajaran sekolah dasar agar anak dapat memahami materi pelajaran dan berprestasi di sekolah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. KEGIATAN SECTION (BARU: BACKGROUND: bg-kegiatan.jpg) -->
+  <section id="kegiatan">
+    <div class="container" style="padding: 150;">
+      <div class="section-header fade-in-element">
+        <p class="section-subtitle">Aktivitas</p>
+        <h2 class="section-title">Kegiatan Belajar Para Siswa</h2>
+      </div>
+      
+      <div class="cards-grid">
+        <!-- Kegiatan 1 -->
+        <div class="card fade-in-element">
+          <img src="belajar calistung.jpg" alt="Pembelajaran Calistung" class="profile-card-img" style="max-height: 180px;">
+          <h3><i class="fa-solid fa-pencil-alt" style="color: var(--accent-orange);"></i> Belajar Calistung Interaktif</h3>
+          <p>Aktivitas belajar membaca, menulis, dan berhitung menggunakan kartu bergambar dan permainan edukatif.</p>
+        </div>
+
+        <!-- Kegiatan 2 -->
+        <div class="card fade-in-element">
+          <img src="hafalan dan praktek sholat.jpg" alt="Praktek Mengaji dan Sholat" class="profile-card-img" style="max-height: 180px;">
+          <h3><i class="fa-solid fa-hands-praying" style="color: var(--accent-green);"></i> Setoran Hafalan & Praktek Sholat</h3>
+          <p>Pendampingan TPQ dalam melancarkan bacaan Al-Qur'an, tajwid, serta hafalan do'a harian siswa.</p>
+        </div>
+
+        <!-- Kegiatan 3 -->
+        <div class="card fade-in-element">
+          <img src="kreatif anak.jpg" alt="Ujian dan Evaluasi" class="profile-card-img" style="max-height: 180px;">
+          <h3><i class="fa-solid fa-palette" style="color: var(--primary);"></i> Event & Kreativitas Anak</h3>
+          <p>Sesi mewarnai dan kreasi seni melatih motorik halus siswa serta mempererat kekompakan antarteman.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BIAYA PAKET SECTION (BACKGROUND: bg-biaya.png) -->
+  <section id="biaya">
+    <div class="container" style="padding: 150;">
+      <div class="section-header fade-in-element">
+        <p class="section-subtitle">Investasi Pendidikan</p>
+        <h2 class="section-title">Informasi Biaya Paket</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card fade-in-element">
+          <h3>Paket Calistung</h3>
+          <div class="price">Rp 150.000 <span>/ bulan</span></div>
+          <p>3x Pertemuan seminggu (Durasi 60 Menit per sesi)</p>
+        </div>
+        <div class="card fade-in-element">
+          <h3>Paket TPQ</h3>
+          <div class="price">Rp 100.000 <span>/ bulan</span></div>
+          <p>3x Pertemuan seminggu (Durasi 60 Menit per sesi)</p>
+        </div>
+        <div class="card fade-in-element">
+          <h3>Paket Lengkap (Calistung + TPQ)</h3>
+          <div class="price">Rp 220.000 <span>/ bulan</span></div>
+          <p>5x Pertemuan seminggu (Durasi 90 Menit per sesi)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Bimbel ALC (Amelia Learning Center). All rights reserved.</p>
+  </footer>
+
+  <!-- MODAL INTERAKTIF: PROFIL & KEUNGGULAN ALC -->
+  <div class="modal" id="modal-profil">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <h2 style="color: var(--primary); margin-bottom: 20px;"><i class="fa-solid fa-award"></i> Tentang Bimbel ALC</h2>
+      
+      <div class="experience-item">
+        <h3>Pendekatan Belajar Personal</h3>
+        <p class="company">Metode Ramah Anak</p>
+        <p>Setiap anak belajar dengan ritme sendiri. Kami memastikan suasana belajar kondusif, sabar, dan tanpa tekanan.</p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Pengajar Berpengalaman</h3>
+        <p class="company">Kualifikasi Terbaik</p>
+        <p>Tenaga pengajar sabar, telaten, dan berdedikasi tinggi dalam membimbing pembentukan karakter anak.</p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Fasilitas Lengkap & Nyaman</h3>
+        <p class="company">Lingkungan Belajar Ideal</p>
+        <p>Ruang belajar bersih, ber-AC, dan dilengkapi alat peraga edukatif untuk mengoptimalkan pemahaman anak.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- File JavaScript External -->
+  <script src="script.js"></script>
+</body>
+</html>
